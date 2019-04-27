@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣图书Top250</title>
+</head>
+<body>
+<div class="nav">
+    <h1 class="title" align="center">豆瓣图书Top250</h1>
+    <h3 class="producer" align="right">——16219111228</h3>
+</div>
+    <table align="center" border="1px" >
+    <thead>
+    <tr>
+            <th>书编号</th>
+            <th>书名</th>
+            <th>书作者、出版社、日期、价钱等信息</th>
+            <th>评分</th>
+            <th>多少人评价</th>
+            <th>内容</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for line in data %}
+        <tr>
+            <td>No:{{line.ranking}}</td>
+            <td>{{ line.bookname}}</td>
+            <td>{{ line.infos }}</td>
+            <td>{{ line.appraise }}</td>
+            <td>{{ line.peoplenum }}</td>
+            <td>{{ line.content }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</body>
+</html>
